@@ -74,7 +74,7 @@
 <div id="controls">
     <a id="lastPage" href="none.html"><img src="left_arrow.png" height="50px" style="padding-right:15px"></a>
     <a id="toc" href="#"><img src="NU.png" height="50px" style="padding-right:15px"></a>
-    <a id="nextPage" href="none.html"><img src="right_arrow.png" height="50px"></a>
+    <a id="nextPage" href="#"><img src="right_arrow.png" height="50px"></a>
 </div>
 
 
@@ -90,7 +90,7 @@
         var pre_value = current_slide - 1;
         var next_value = current_slide + 1;
         var previous = "Slide_" + pre_value.toString()+".html";
-        var next = "Slide_" + next_value.toString()+".html";
+        var next = "#";
     }
     document.title = "Slide " +current_slide
     document.getElementById("lastPage").setAttribute("href", previous.toString());
