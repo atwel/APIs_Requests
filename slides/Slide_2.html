@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="atwell.css">
+</head>
+
+<title>Slide_2</title>
+
+<script>
+    var stroke_count = 0;
+    var stroke_max = 1;
+    document.onkeydown = function(e) {
+
+        switch (e.keyCode) {
+            case 88:
+                document.getElementById("toc").click()
+                break;
+            case 33:
+                if (stroke_count>=1){
+                    console.log("in loop");
+                    document.getElementById(stroke_count.toString()).style.visibility = "hidden";
+                    stroke_count -= 1;
+                    break;}
+                else {document.getElementById("lastPage").click();
+                    break;}
+            case 34:
+                stroke_count += 1;
+                if (stroke_count>=0 && stroke_count<=stroke_max){
+                    document.getElementById(stroke_count.toString()).style.visibility = "visible";
+                    break;}
+                else{
+                    document.getElementById("nextPage").click()
+                    break;
+                }
+            case 37:
+                if (stroke_count>=1){
+                    console.log("in loop");
+                    document.getElementById(stroke_count.toString()).style.visibility = "hidden";
+                    stroke_count -= 1;
+                    break;}
+                else {document.getElementById("lastPage").click();
+                    break;}
+            case 39:
+                stroke_count += 1;
+                if (stroke_count>=0 && stroke_count<=stroke_max){
+                    document.getElementById(stroke_count.toString()).style.visibility = "visible";
+                    break;}
+                else{
+                    document.getElementById("nextPage").click()
+                    break;
+                }
+
+            }
+    };
+</script>
+
+<body>
+<div id="parent">
+	<div id="child">
+	       <center>
+               <div class="slide_title">Practice Session</div>
+               <br><br><br>
+               <div class="largetext">1:30pm, Mudd 2124</div><br><br><br>
+               <div class="largetext">APIs practice materials: <a href="https://www.dataquest.io/blog/python-api-tutorial/"><span style="color:blue">Dataquest API tutorial blog </span></a></div><br><br>
+               <div class="largetext">Requests materials: <a href="https://github.com/stanfordjournalism/search-script-scrape"><span style="color:blue">Stanford Journalism scraping repo</span></a></div>
+           </center>
+    </div>
+</div>
+
+
+
+<div id="controls">
+    <a id="lastPage" href="none.html"><img src="left_arrow.png" height="50px" style="padding-right:15px"></a>
+    <a id="toc" href="#"><img src="NU.png" height="50px" style="padding-right:15px"></a>
+    <a id="nextPage" href="none.html"><img src="right_arrow.png" height="50px"></a>
+</div>
+
+
+<script>
+    document.getElementById("parent").style.height = window.innerHeight*.92+"px";
+    document.getElementById("parent").style.width = window.innerWidth*.98+"px";
+    var current_slide = parseInt(window.location.href.match(/Slide_[0-9]{1,3}/)[0].match(/[0-9]{1,3}/)[0]);
+
+    if (current_slide == 1){
+        var previous = "index.html"
+        var next = "Slide_2.html"
+    }else{
+        var pre_value = current_slide - 1;
+        var next_value = current_slide + 1;
+        var previous = "Slide_" + pre_value.toString()+".html";
+        var next = "Slide_" + next_value.toString()+".html";
+    }
+    document.title = "Slide " +current_slide
+    document.getElementById("lastPage").setAttribute("href", previous.toString());
+    document.getElementById("nextPage").setAttribute("href", next.toString());
+</script>
+
+
+</body>
+</html>

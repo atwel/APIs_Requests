@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+
+<head>
+<link rel="stylesheet" type="text/css" href="slides/atwell.css">
+</head>
+
+<title>APIs and Web Requests</title>
+
+<script>
+    document.onkeydown = function(e) {
+
+        switch (e.keyCode) {
+            case 88:
+                document.getElementById("toc").click()
+                break;
+            case 33:
+                document.getElementById("lastPage").click()
+                break;
+            case 34:
+                document.getElementById("nextPage").click()
+                break;
+            case 37:
+                document.getElementById("lastPage").click()
+                break;
+            case 39:
+                document.getElementById("nextPage").click()
+                break;
+
+        }
+    };
+</script>
+
+<body>
+<div id="parent">
+	<div id="child">
+	       <center>
+               <div class="slide_title">Intro to APIs and web requests</div>
+                    <br><br><br><br>
+	           <div class="slide_subtitle">Jon Atwell, PhD</div>
+                    <br>
+               <div class="slide_subsubtitle">NU Data Science Scholar with NICO/IPR</div>
+           </center>
+    </div>
+</div>
+
+
+
+
+<div id="controls">
+    <a id="lastPage" href="http://www.github.com/atwel"><img src="slides/left_arrow.png" height="50px" style="padding-right:15px"></a>
+    <a href="#" ><img src="slides/NU.png" height="50px" style="padding-right:15px"></a>
+    <a id="nextPage" href="slides/Slide_1.html"><img src="slides/right_arrow.png" height="50px"></a>
+</div>
+
+
+<script>
+    document.getElementById("parent").style.height = window.innerHeight*.92+"px";
+    document.getElementById("parent").style.width = window.innerWidth*.98+"px";
+</script>
+
+
+</body>
+</html>

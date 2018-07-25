@@ -1,0 +1,68 @@
+
+a {
+    text-decoration: none !important;
+	color: #000
+}
+
+
+#parent {display: table;}
+
+#child {
+    display: table-cell;
+    vertical-align: middle;
+	padding:15%;
+
+}
+
+#controls {
+    position: absolute;
+    right: 25px;
+}
+
+.slide_title {
+	font: 100 70px "Helvetica Neue";
+    fill: #eee;
+}
+
+.slide_subtitle {
+	font: 100 40px "Helvetica Neue";
+    fill: #eee;
+}
+
+.slide_subsubtitle {
+	font: 100 25px "Helvetica Neue";
+    fill: #eee;
+}
+
+.extralargetext {
+    font: 200 40px "Helvetica Neue";
+    fill: #eee;
+}
+
+
+.largetext {
+    font: 200 40px "Helvetica Neue";
+    fill: #eee;
+}
+
+.mediumtext {
+    font: 200 30px "Helvetica Neue";
+    fill: #eee;
+}
+
+.smalltext{
+    font: 200 20px "Helvetica Neue";
+    fill: #eee;
+}
+
+
+.toc tr {
+	font: 100 20px "Helvetica Neue";
+	line-height: 30px;
+
+}
+
+.toc td {
+	width: 450px;
+
+}
