@@ -71,6 +71,8 @@ class TWTTR(object):
                                 isRT=fields.BOOLEAN(stored=True),
                                 timesRT=fields.NUMERIC(stored=True),
                                 timesFav= fields.NUMERIC(stored=True),
+                                orig_timesRT=fields.NUMERIC(stored=True),
+                                orig_timesFav= fields.NUMERIC(stored=True),
                                 hashtags=fields.KEYWORD(stored=True),
                                 orgnlTweet = fields.TEXT(stored=True),
                                 mentions=fields.KEYWORD(stored=True),
@@ -268,7 +270,9 @@ class TWTTR(object):
                                     mentions = tw["mentions"],
                                     isRT = bool(tw["isRT"]),
                                     timesRT = int(tw["rt_count"]),
-                                    timesFav = int(tw["fav'd"]),
+                                    timesFav = int(tw["fav_count"]),
+                                    orig_timesRT = int(tw["orig_rt_count"]),
+                                    orig_timesFav = int(tw["orig_fav_count"]),
                                     orgnlTweet = str(tw["orig"]),
                                     media = tw["media"],
                                     url = str("./tools/nodata.html"),
@@ -312,7 +316,8 @@ class TWTTR(object):
         else:
             isRT = False
             cleaned["orig"] = "NA"
-
+            cleaned["orig_rt_count"] = -1
+            cleaned["orig_fav_count"] = -1
             if "truncated" in tw.keys():
                 tw = self.TWIT_PIPE.GetStatus(tw["id"]).AsDict()
                 cleaned["text"] = w["full_text"]
