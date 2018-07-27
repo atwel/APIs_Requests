@@ -427,8 +427,12 @@ class TWTTR(object):
                 master_str += self.to_html(res, True)
 
             master_str += "</body></html>"
-            f.write(master_str)
-            f.close()
+            try:
+                f.write(master_str)
+                f.close()
+            except:
+                f.write("Unicode parsing error")
+                f.close()
 
             res_str = "<!DOCTYPE html><html><title>LIWC statistics for term(s):"+terms+"</title><body><br>"
             res_str += "<table><tr>"+("<th>Category&nbsp;</th><th>Average</th><th>Std Dev</th><th>Max&nbsp</th><th>Min&nbsp</th>"*3)+"</tr>"
