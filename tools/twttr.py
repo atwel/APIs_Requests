@@ -472,8 +472,12 @@ class TWTTR(object):
                 res_str += "<p>No matches found </p></body></html>"
 
             t = open("./visualization/"+ saveAs +"_averages.html", "w+")
-            t.write(res_str)
-            t.close()
+            try:
+                t.write(res_str)
+                t.close()
+            except:
+                t.write("Unicode Error")
+                t.close()
 
             self.graph_Tweets(results,saveAs)
 
@@ -728,8 +732,12 @@ class TWTTR(object):
             strg = strg[:-2] + "]}"
 
             newfile = open("./visualization/"+str(htmlname)+".json", "w+")
-            newfile.write(strg)
-            newfile.close()
+            try:
+                newfile.write(strg)
+                newfile.close()
+            except:
+                newfile.write("unicode error")
+                newfile.close()
 
             try:
                 dmax = max(delta_avg)
@@ -757,7 +765,10 @@ class TWTTR(object):
                     ln = ln + html
                 if "fake.json" in ln:
                     ln = ln.replace("fake.json",str(htmlname)+".json")
-                file2.write(ln)
+                try:
+                    file2.write(ln)
+                except:
+                    file2.write("unicode error")
             file2.close()
             form.close()
 
@@ -821,7 +832,10 @@ class TWTTR(object):
         bs = bs[:-1]+ "]}"
         sl = sorted(size_dict, key=lambda key: size_dict[key][0], reverse=True)
         doc = open("./visualization/"+saveAs+".json", "w+")
-        doc.write(bs)
+        try:
+            doc.write(bs)
+        except:
+            doc.write("unicode error")
         doc.close()
         #sl = sorted(size_list)
         id_strg = "<br><br>"
@@ -839,7 +853,10 @@ class TWTTR(object):
                 ln = ln.replace("search.json", saveAs+".json")
             if "</body>" in ln:
                 ln = id_strg + "</body>"
-            file.write(ln)
+            try:
+                file.write(ln)
+            except:
+                file.write("unicode error")
         file.close()
         form.close()
 
